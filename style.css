@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .main-nav a {
   color: white;
   text-decoration: none;
@@ -30,15 +34,16 @@
 }
 .slider {
   position: relative;
-  width: 100%;
+  width: 200%;
   margin: 0;
   left: 0;
-  animation: 6s slider infinite;
+  animation: 12s slider infinite;
   display: flex;
   height: 500px;
 }
 .slide {
-  width: 100%;
+  width: 50%;
+  flex-shrink: 0;
 }
 .slide img {
   width: 100%;
@@ -50,12 +55,10 @@
   0% {
     transform: translateX(0);
   }
-
   50% {
     transform: translateX(-50%);
   }
-
   100% {
-    transform: translateX(-75%);
+    transform: translateX(0);
   }
 }
