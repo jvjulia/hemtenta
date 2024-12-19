@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-
+/* Header */
 .main-nav a {
   color: white;
   text-decoration: none;
@@ -29,6 +29,8 @@
 .logo {
   height: 100%;
 }
+
+/* slideshow */
 .slider-wrapper {
   overflow: hidden;
 }
@@ -50,6 +52,28 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+/* Produktalternativ */
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 2rem;
+}
+.item {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+.item img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.item .hover-images:hover {
+  opacity: 0;
+  cursor: pointer;
 }
 @keyframes slider {
   0% {
