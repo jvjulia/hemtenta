@@ -79,8 +79,14 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  align-items: center;
 }
-.item img {
+.price-container img {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+}
+.item .image-wrapper img {
   width: 100%;
   height: auto;
   object-fit: cover;
