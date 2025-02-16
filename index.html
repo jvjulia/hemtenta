@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Språket som används i HTML-kodningen är på engelska, här definerar man vilket språk man använder.-->
   <head>
+    <!-- Denna del är inte synlig för användaren utan används främst av sökmotorer för att få fram information om författeren och innehållet av sidan.-->
     <meta charset="UTF-8" />
+    <!-- Detta är en teckenuppsättning som stödjer utveckling av hemsidor för det flesta språk. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Examinationsuppgift" />
+    <!-- Meta används för att ge beskrivningar för dokumentet, så som författare eller andra saker som en sökmotor kan vilja ha reda på.-->
     <meta name="author" content="Julia Voss" />
     <title>Agilityshoppen.se</title>
+    <!-- Titel på webbläsarens flik-->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- I bodyn hittar vi allt innehåll på hemsidan. -->
     <div class="wrapper">
-      <!-- Väljer att skapa en wrapper för hela projektet för att hålla ihop det och att det blir enklare för stylingen i CCS-filen.-->
+      <!-- Väljer att skapa en wrapper för hela projektet för att hålla ihop det och att det blir enklare för stylingen i CCS-filen.
+       Stilinställningarna slipper upprepas individuellt för varje enskild sak, saker som gäller det alla flesta objekt. -->
+      <!-- I detta projekt används även mycket klasser då många av sakerna i denna hemsidan är återkommande. Vilket var att fördra före att använda
+        sig av ID.n, då det bara kan förekomma endast 1 gång av samma i dokumentet. Det skulle göra detta rörigt att läsa och svårt att koda, iform av att komma ihåg alla ord osv. -->
       <header>
+        <!-- Samlar information om vad som komma skall i <main>-->
         <img
           class="logo"
           src="images/agility-logotype1.png"
@@ -22,25 +32,36 @@
           <div class="spacer"></div>
           <!-- En tom div för justering av layouten i CSS. -->
           <nav class="main-nav">
+            <!-- Här behövs det en klass för navigationen eftersom det kommer komma en till lite senare, vilket gör att dem kanske inte 
+            nödvändigtvis vill ha/ behöver ha samma stilinställningar. -->
             <ul>
-              <li><a href="">Startsida</a></li>
+              <!-- Här används en ul (osorterad) lista istället för ol (sorterad) lista, då ordningen på produkterna har ingen större betydelse.
+              I listan används listobjekt (li), även kallat list item för att skriva upp saker i listan. -->
+              <li><a href="index.html">Startsida</a></li>
               <li><a href="">Produkter</a></li>
               <li><a href="">Återförsäljare</a></li>
-              <li><a href="">Analys</a></li>
+              <li><a href="analys.html">Analys</a></li>
             </ul>
           </nav>
-          <input type="text" class="search" placeholder="Sök produkt" />
-          <!-- Sökfält, möjliggör sökning efter produkterna-->
+          <input
+            type="text"
+            class="search"
+            placeholder="Sök produkt" /><!-- Sökfält, möjliggör sökning efter produkterna på hemsidan-->
         </div>
       </header>
       <main>
+        <!-- Här hittas det mest primära innehållet för hemsidan, i detta fall är det en webshop med produkter som ska presenteras för användaren.. -->
         <div class="slider-wrapper">
           <!-- En wrapper för bilder i ett bildspel-->
           <div class="slider">
+            <!-- Väljer att skapa ett rullande bildspel för att utmana mig själv mer än att lägga i en enda stilla bild.-->
             <div class="slide">
+              <!-- Lägger bilderna i en klass, enklare vid hantering för CSS-styling.-->
               <img
                 src="images/background-image1.jpg"
                 alt="Hund som springer genom en tunnel" />
+              <!-- Säkrar upp med text bakom varje bild på hemsidan om det skulle vara något strul med bilderna, 
+                att man ändå kan läsa sig till vad det skulle ha föreställt på bilden.-->
             </div>
             <div class="slide">
               <img
@@ -51,16 +72,22 @@
 
           <div class="products">
             <!-- Sektion för alla produkter på hemsidan.-->
-            <!-- Varje produkt representeras som en article med en bild, text, pris och köpknapp -->
+            <!-- Varje produkt representeras som en article med en bild, text, pris och köpknapp kopplat med länk, för vidare utveckling senare av hemsidan. Då kan Köpknapp leda till en kundkorg. -->
             <article class="item">
+              <!-- Väljer att göra article för varje produkt då innehållet är oberoende av varandra och för att just en produkt
+              skulle kunna få spridning via en sökmotor eller andra sociala kanaler. Då vill man att den ska kunna vara fristående med eget innehåll
+              vilket är mer semantiskt korrekt istället för att använda sig av ex. <section> till hemsidan. -->
               <div class="image-wrapper">
+                <!-- Samlar alla bilder i klassen för att underlätta för CSS-stylingen. -->
                 <img
                   src="images/aglity-hoppring.jpg"
                   alt="Hund som hoppar genom en ring" />
               </div>
               <h2>Hoppring för agility</h2>
               <div class="price-container">
+                <!-- Väljer att skapa en klass för allt som rör pris och kundvagnssymbolen, för att förenkla CSS-stylingen senare. -->
                 <p>199 kr</p>
+                <!-- För att kunna skriva stycken används <p> som står för paragraph-->
                 <a href="">
                   <img
                     src="images/shopping-cart.png"
@@ -69,7 +96,7 @@
               </div>
             </article>
             <article class="item">
-              <!-- Samma upprepning för alla produkter-->
+              <!-- Samma upprepning för nästan alla produkter.-->
               <div class="image-wrapper">
                 <img
                   src="images/camproll-pink.jpg"
@@ -106,11 +133,15 @@
                 <img
                   src="images/giraf-inside.jpg"
                   alt="Mjukleksak i form av en giraff" />
+                <!-- Första bilden av två på hooverbilderna-->
 
                 <div class="hover-images">
+                  <!-- På ett antal av produkterna har jag valt att göra en hoover effekt på produktbilderna, så köparen
+                  får en bättre överblick av hur produkten kan användas eller vad den kommer i för andra färger. -->
                   <img
                     src="images/giraf-softtoy.jpg"
                     alt="Insidan av den mjuka leksaken" />
+                  <!-- Bilden som kommer fram när man hooverar över med muspekaren-->
                 </div>
               </div>
               <h2>Rep giraff</h2>
@@ -215,7 +246,13 @@
         </div>
       </main>
       <footer>
+        <!-- Det är inte nödvändigt att alltid visa en footer i slutet, men utseende mässigt passade det bäst in där.
+        Här kan man enkelt sammanfatta sidan och fånga upp köparen igen om det är något speciellt man letar efter. 
+        Jag har valt att skriva en kort del om vad det är för företag dem handlar av, alla navigations möjligheter och även kontakt- och besöksuppgifter. -->
         <section>
+          <!-- Här lämpade sig <section> bättre än vad en <article> skulle göra, för skulle man ta ut några av dessa delarna från footern, 
+          hade innehållet vart svårt att få en uppfattning vad det handlar om. En <section> är inte fristående utan måste mer eller mindre ha ett sammanhang
+          för att förstå syftet med det. Därav lämpade sig <section> bättre än en <article> -->
           <h3>Vilka är vi?</h3>
           <p>
             Vi är ett nystartat företag som tillverkar och säljer hundleksaker
@@ -226,11 +263,12 @@
         <section>
           <h3>Navigation</h3>
           <nav class="secondary-nav">
+            <!-- Behöver en till klass för denna navigation så den i headern inte blandas ihop med denna här nere. -->
             <ul>
-              <li><a href="">Startsida</a></li>
+              <li><a href="index.html">Startsida</a></li>
               <li><a href="">Produkter</a></li>
               <li><a href="">Återförsäljare</a></li>
-              <li><a href="">Analys</a></li>
+              <li><a href="analys.html">Analys</a></li>
             </ul>
           </nav>
         </section>
