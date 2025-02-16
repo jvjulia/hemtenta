@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Språket som används i HTML-kodningen är på engelska, här definerar man vilket språk man använder.-->
+  <head>
+    <!-- Denna del är inte synlig för användaren utan används främst av sökmotorer för att få fram information om författeren och innehållet av sidan.-->
+    <meta charset="UTF-8" />
+    <!-- Detta är en teckenuppsättning som stödjer utveckling av hemsidor för det flesta språk. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Examinationsuppgift" />
+    <!-- Meta används för att ge beskrivningar för dokumentet, så som författare eller andra saker som en sökmotor kan vilja ha reda på.-->
+    <meta name="author" content="Julia Voss" />
+    <title>Agilityshoppen.se</title>
+    <!-- Titel på webbläsarens flik-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- I bodyn hittar vi allt innehåll på hemsidan. -->
+    <div class="wrapper">
+      <!-- Väljer att skapa en wrapper för hela projektet för att hålla ihop det och att det blir enklare för stylingen i CCS-filen.
+       Stilinställningarna slipper upprepas individuellt för varje enskild sak, saker som gäller det alla flesta objekt. -->
+      <!-- I detta projekt används även mycket klasser då många av sakerna i denna hemsidan är återkommande. Vilket var att fördra före att använda
+        sig av ID.n, då det bara kan förekomma endast 1 gång av samma i dokumentet. Det skulle göra detta rörigt att läsa och svårt att koda, iform av att komma ihåg alla ord osv. -->
+      <header>
+        <!-- Samlar information om vad som komma skall i <main>-->
+        <img
+          class="logo"
+          src="images/agility-logotype1.png"
+          alt="Logotyp för hemsidan agilityleksaker" />
+        <!-- Väljer att ha en bild/logotyp i headern för att få en snyggt utseende till hemsidan.-->
+        <div class="nav-container">
+          <!-- Skapar en ny div för att samla hela första navigationen i och för positionering senare i CSS-filen.-->
+          <div class="spacer"></div>
+          <!-- En tom div för justering av layouten i CSS. -->
+          <nav class="main-nav">
+            <!-- Här behövs det en klass för navigationen eftersom det kommer komma en till lite senare, vilket gör att dem kanske inte 
+            nödvändigtvis vill ha/ behöver ha samma stilinställningar. -->
+            <ul>
+              <!-- Här används en ul (osorterad) lista istället för ol (sorterad) lista, då ordningen på produkterna har ingen större betydelse.
+              I listan används listobjekt (li), även kallat list item för att skriva upp saker i listan. -->
+              <li><a href="index.html">Startsida</a></li>
+              <li><a href="">Produkter</a></li>
+              <li><a href="">Återförsäljare</a></li>
+              <li><a href="analys.html">Analys</a></li>
+            </ul>
+          </nav>
+          <input
+            type="text"
+            class="search"
+            placeholder="Sök produkt" /><!-- Sökfält, möjliggör sökning efter produkterna på hemsidan-->
+        </div>
+      </header>
+      <main>
+         <!-- Här hittas det mest primära innehållet för hemsidan, i detta fall är det en webshop med produkter som ska presenteras för användaren.. -->
+         <div class="slider-wrapper">
+            <!-- En wrapper för bilder i ett bildspel-->
+            <div class="slider">
+              <!-- Väljer att skapa ett rullande bildspel för att utmana mig själv mer än att lägga i en enda stilla bild.-->
+              <div class="slide">
+                <!-- Lägger bilderna i en klass, enklare vid hantering för CSS-styling.-->
+                <img
+                  src="images/background-image1.jpg"
+                  alt="Hund som springer genom en tunnel" />
+                <!-- Säkrar upp med text bakom varje bild på hemsidan om det skulle vara något strul med bilderna, 
+                  att man ändå kan läsa sig till vad det skulle ha föreställt på bilden.-->
+              </div>
+              <div class="slide">
+                <img
+                  src="images/background-image2.JPG"
+                  alt="En hund som hoppar över ett hopphinder" />
+              </div>
+            </div>
+  
+        <p>Analystext av Julia Voss</p>
+        <p>Examinationsuppgift i WUH100</p>
+        <p>2025-02-16</p>
+        <section>
+
+          <h2>1. Inledning</h2>
+          <p>Syftet med denna uppgift var att skapa en helt egen webshop från grunden med alla kunskaper vi har samlat på oss under kursen Webbutveckling med HTML och CSS.  Det skulle skapas en sida för all CSS-styling för hemsidan, sedan skulle det även skapas två HTML-sidor, en för själva webshoppen och en som denna analysdel ska ligga på.
+            Det skulle endast finnas en webbshop utan funktion, dvs inga andra språk som har lärts i kursen skulle användas.
+        </p>
+        <p>OBS: Mycket av kommentarena ligger i koden</p>
+        </section>
+        <section>
+          <h2>2. Programmeringsval</h2>
+          <p>HTML5 -
+            Fått möjligheten under denna kurs att testa på att använda HTML5, vilket har gjort att man fått en bra känsla för miljön är såpass lätt att förstå sig på och att använda. Största skillnaden sedan tidigare version är främst att denna version har lagt stort fokus på en semantisk struktur och vettig info (Montatahar & Holmberg, 2022). Strukturen är relativt logisk och enkelt att hänga med i vilket jag tycker underlättar och skapar intresse för just tekniska bitar och att allt inte behöver vara så komplicerat för att lära sig IT i dagens samhälle.
+        </p>
+           <p> CSS - 
+            Under arbetets gång har det visats sig varför det är så pass bra att ha olika dokument för olika ända mål. Att strukturen och informationen ligger i ett och designen i ett annat. Det gör bla, att vid uppdatering av hemsidorna blir det mindre arbete att rodda om i allt och endast redigera i CSS-filen (Montatahar & Holmberg, 2022). Även mängden kod som behövs skrivas blir mer lättläst om man separerar på filerna.
+            När man väl lär känna hur CSS fungerar är det även här lätt att hitta och att kalla på olika klasser och element.
+        </p>
+            Box-modell - 
+            Att använda just border-box kändes som det passade bra i detta projekt mer än vad content-box hade gjort.
+            När jag valde border-box handlade det främst om att elementens storlek inkluderade både padding och border i width och height. Detta gjorde så att elementen inte kunde bli större än var hela boxen var. Vilket i sin tur gjorde det lättare att hantera dem responsiva brytpunkterna (Montatahar & Holmberg, 2022). Om man i stället hade velat använda context-box hade det nog försvårat mitt arbete som nybörjare inom ämnen med att tänka på att boxen är större än vad det står eftersom paddingen och bordern kunde lägga säg utanför width och height. När det är olika webbläsare som ska ta sidan är det bättre att göra den border-box eftersom det kan uppstå stora skillnader när man använder content-box.
+            </p>
+        </section>
+        <section>
+          <h2>3. Layout</h2>
+          <p>Navigation - 
+            När navigationen skulle placeras ut var det självklart att den skulle komma högst upp. Det är bland det första en användare ser och kan navigera sig med på sidan när den kommit in. Sedan att det blev en ul-lista till navigation var också ganska givet då det inte finns någon direkt sortering på alla rubriker. Om man jämför med en ol- lista där ordning har en betydelse (Montatahar & Holmberg, 2022). 
+            Längst ner på sidan finner man också en navigation likt längst upp på sidan. Ansåg att det var bra att ha med sådan information och köparen lätt har tappat bort sig på sidan och söker efter kontaktuppgifter och navigation längst ner med.
+        </p>
+        <p></p>
+            Produkter- 
+            Att produktupplägget skulle bli som i ett rutnät tog jag mycket inspiration från andra webbshoppar på nätet. Det är enkelt att få en överblick än att istället behöva scrolla i en lista och läsa sig till vad man söker. 
+            (Montatahar & Holmberg, 2022) viasde i kursboken hur man enkelt kan skapa ett rutnät med hjälp av en enhet som kallas fractional unit (fr) och är inprincip hur stort del av det tillgängliga utrymmet man vill ge till varje sak.
+            Ex. min webshop är 4, 1fr. 4 står för att den delar upp bredden i 4 lika stora delar och tar 1 del av det tillgängliga utrymmet och skapar ett rutnät snabbt och smidigt.
+        </p>
+           <p> Läsbarhet -
+            En viktig sak när man skapar en hemsida som alla olika människor ska läsa av är läsbarheten. Det är viktigt med bra kontrast och tydligt typsnitt. Nu valde jag att ha svart text mot färgad bakgrund vilket kan upplevas som att man fångar uppmärksamheten för ögat. (Montatahar & Holmberg, 2022) trycker mycket på att både avstånd och tydlighet är viktigt när man bygger upp något. Vilket jag också la mycket tid på att välja noggrant vilka färger som ger bäst kontrast och tjocklek på text utan att det skulle bli förmycket.
+            </p>
+        </section>
+        <section>
+          <h2>4. Brytpunkter</h2>
+          <p>Det brytpunkter som finns på hemsidan nu är anpassade för de flesta format av webbläsare på olika enheter. Allt för att ge konsumenten en bra upplevelse har jag fixat så att den både går att läsa på laptop, oftast runt 1300 px (Montatahar & Holmberg, 2022). 
+            Det man främst ser skillnad på när brytpunkterna för de mindre skärmarna sker. Då gäller det att man byter layout på grid:sen så att det anpassar sig efter fönstret. Ex. från 920 till 750. Där går det till att bilda mindre rutor som får plats bredvid varandra och bygga hemsidan längre. Även sökrutan kommer att placeras över hela hemsidan så att man lätt kan se den, försvinner annars lätt om den skulle ligga kvar uppe på samma rad som navigationen. 
+            Sedan till mobilanvändare vyn har jag valt att endast visa en i taget. Då det blir lätt för plottrigt om man ska få plats mer än en. Därav är alla produkter väl synliga och visas en i taget i mobilvyn. Man kan även se att footern har placerat sig som en enda lång lista, vilket underlättar somsagt att det inte blir så plottrigt om allt ska få plats på en rad. 
+            </p>
+        </section>
+        <section>
+          <h2>6. Buggar och felaktigheter</h2>
+          <p>I nuläget finns det inga käna buggar eller problem med hemsidan. När jag körde igenom en validator för både css:en och HTML hade den inget att klaga på. Enda som saknas är funktionaliteten.
+        </p>
+        </section>
+        <section>
+          <h2>7. Summering</h2>
+          <p>En webshop om agility leksaker och tillbehör till hund fick min hemsida handla om. Den svåraste delen som jag tog på mig var nog när jag skulle försöka sätta ihop bildspelet och att hoovra över bilderna på produkterna. Det fick mig verkligen att tänka till och använda mig av både kursboken men även rådfråga en vän som jobbar med frontendutveckling.
+            Kursen har absolut fått upp mitt intresse för webbutveckling och jag kan nu i efterhand säga att det inte var så svårt som jag hade föreställt mig. Med bra utvecklade metoder och språk är absolut detta något som jag kommer att prova på igen.
+            Tack till alla lärare som har svarat på frågor och gjort grymma videos att kolla på när man varit lite lost!
+            </p>
+        </section>
+        <section>
+          <h2>Referenser</h2>
+          <p>Montatahar, F., & Holmberg, L. (2022). Introduktion till HTML och CSS. Lund: Studentlitteratur.
+        </p>
+        </section>
+      </main>
+      <footer>
+        <!-- Det är inte nödvändigt att alltid visa en footer i slutet, men utseende mässigt passade det bäst in där.
+        Här kan man enkelt sammanfatta sidan och fånga upp köparen igen om det är något speciellt man letar efter. 
+        Jag har valt att skriva en kort del om vad det är för företag dem handlar av, alla navigations möjligheter och även kontakt- och besöksuppgifter. -->
+        <section>
+          <!-- Här lämpade sig <section> bättre än vad en <article> skulle göra, för skulle man ta ut några av dessa delarna från footern, 
+          hade innehållet vart svårt att få en uppfattning vad det handlar om. En <section> är inte fristående utan måste mer eller mindre ha ett sammanhang
+          för att förstå syftet med det. Därav lämpade sig <section> bättre än en <article> -->
+          <h3>Vilka är vi?</h3>
+          <p>
+            Vi är ett nystartat företag som tillverkar och säljer hundleksaker
+            och träningstillbehör till främst agility. Tveka inte att höra av
+            dig om du har några frågor!
+          </p>
+        </section>
+        <section>
+          <h3>Navigation</h3>
+          <nav class="secondary-nav">
+            <!-- Behöver en till klass för denna navigation så den i headern inte blandas ihop med denna här nere. -->
+            <ul>
+              <li><a href="index.html">Startsida</a></li>
+              <li><a href="">Produkter</a></li>
+              <li><a href="">Återförsäljare</a></li>
+              <li><a href="analys.html">Analys</a></li>
+            </ul>
+          </nav>
+        </section>
+        <section>
+          <h3>Kontakt</h3>
+          <p>
+            Agilityshoppen.se <br />
+            Långgatan 45 <br />
+            456 78 Borås
+          </p>
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>
