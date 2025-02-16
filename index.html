@@ -10,15 +10,17 @@
   </head>
   <body>
     <div class="wrapper">
-      <!-- Väljer att skapa en wrapper för hela projektet för att det blir enkelt att sätta regler i CCS-filen.-->
+      <!-- Väljer att skapa en wrapper för hela projektet för att hålla ihop det och att det blir enklare för stylingen i CCS-filen.-->
       <header>
         <img
           class="logo"
           src="images/agility-logotype1.png"
           alt="Logotyp för hemsidan agilityleksaker" />
-        <!-- Väljer att ha en bild i headern för att få en snyggt utseende till hemsidan.-->
+        <!-- Väljer att ha en bild/logotyp i headern för att få en snyggt utseende till hemsidan.-->
         <div class="nav-container">
+          <!-- Skapar en ny div för att samla hela första navigationen i och för positionering senare i CSS-filen.-->
           <div class="spacer"></div>
+          <!-- En tom div för justering av layouten i CSS. -->
           <nav class="main-nav">
             <ul>
               <li><a href="">Startsida</a></li>
@@ -28,10 +30,12 @@
             </ul>
           </nav>
           <input type="text" class="search" placeholder="Sök produkt" />
+          <!-- Sökfält, möjliggör sökning efter produkterna-->
         </div>
       </header>
       <main>
         <div class="slider-wrapper">
+          <!-- En wrapper för bilder i ett bildspel-->
           <div class="slider">
             <div class="slide">
               <img
@@ -46,6 +50,8 @@
           </div>
 
           <div class="products">
+            <!-- Sektion för alla produkter på hemsidan.-->
+            <!-- Varje produkt representeras som en article med en bild, text, pris och köpknapp -->
             <article class="item">
               <div class="image-wrapper">
                 <img
@@ -63,6 +69,7 @@
               </div>
             </article>
             <article class="item">
+              <!-- Samma upprepning för alla produkter-->
               <div class="image-wrapper">
                 <img
                   src="images/camproll-pink.jpg"

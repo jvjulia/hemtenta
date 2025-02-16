@@ -164,6 +164,7 @@ h3 {
   font-family: Selawik-semibold, serif;
 }
 
+/* Responsiva brytpunkter */
 @media (max-width: 1320px) {
   .wrapper {
     width: 100%;
