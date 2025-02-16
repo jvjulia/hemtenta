@@ -1,7 +1,9 @@
 @font-face {
+  /* Här importeras de olika typer av typsnitt som kommer att användas på sidan*/
   font-family: Regular-selawik;
   src: url(fonts/selawk.woff) format("woff"),
-    url(fonts/selawk.woff2) format("woff2");
+    /* Detta är ett krav på uppgiften att använda sig av woff och woff2 format på typsnitten.  */
+      url(fonts/selawk.woff2) format("woff2");
 }
 @font-face {
   font-family: Selawik-semibold;
@@ -9,10 +11,16 @@
     url(fonts/selawiksemibold.woff2) format("woff2");
 }
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Använder just border-box eftersom i denna så inkluderas både vår padding och border i både höjd och bredd vilket gör
+  totalten blir den samma som i height och width. Medan i en content-box så hade det lagt sig utanför vilket gör att boxen blir för stor för utrymmet. 
+  Får inte glömma att innehållet i en sådan typ så blir utrymmet för innehållet större än vad det skulle vara i en border-box. Men den går utanför den lämpiga height och width intervallet,
+  vilket jag anser kan vara jobbigt att ta hänsyn till.   */
 }
 /* Header */
+/* Hela denna sidan avser hur man stylar en html-sida. I detta fall stylar vi våra html sidor för en webshop. Det finns ingen styling (bör inte finnas någon) på en HTML sida.
+Där är själva HTML sidan endast strukturen vad som bör finnas på hemsidan medan CSS stylar allt med färg, typsnitt etc. */
 .main-nav a {
+  /* Klassen för första navigationen för länkarna. Väljer att sätta en färg på dem så att dem syns lättare. */
   color: white;
   text-decoration: none;
   background-color: rgb(222, 151, 53);
@@ -20,30 +28,39 @@
   display: block;
 }
 .main-nav a:hover {
+  /* När man hoovrar över någon av länkarna med muspekaren kommer knappen att byta färg till mörkare orange. Detta har främst gjorts
+  för att det ska vara tydligt vart muspekaren befinner sig någonstans.*/
   color: rgb(0, 0, 0);
   background-color: rgb(255, 93, 29);
 }
 .wrapper {
+  /* Sätter hur stor hemsidan får vara i pixlar. 1300px är mer eller mindre ett standard mått för hemsidors bredd. */
   max-width: 1300px;
   margin: 0 auto;
 }
 .main-nav ul {
+  /* Här väljer jag att använda Flexbox som layout eftersom vi endast behöver en rad med information. Om vi skulle behövt både rader och kolumner
+  hade en grid lämpat sig bättre eftersom felx endast kan hantera rader eller kolumner. */
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Gör så att informationen på raden lägger sig i mitten på både höjden och bredden vilket är estiskt snyggt! */
   align-items: center;
   gap: 10px 20px;
   flex-wrap: wrap;
 }
 .main-nav li {
-  display: inline-block;
+  display: inline-block; /* Använder sig att en kombinerad version av både block och inline. Med inline-block så får vi funktionen som gör att elementen flyter med omgivningen men bevara egenskaper
+  från block. Igen radbrytning sker när man använder sig av inline-block. */
 }
 .main-nav {
+  /* Hur stor del av headern som navigationen får ta upp. */
   width: 60%;
 }
 .spacer {
+  /* Endast skapad för att lättare kunna få sektionen med navigationen jämnt uppdelad i tre, därav får en tom div skapas och "låstas" ta upp plats */
   width: 20%;
 }
 .nav-container {
+  /* Fånga upp hela navigationen och ge samma egenskaper till hela den klassen. */
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -57,10 +74,13 @@
 
 /* slideshow */
 .slider-wrapper {
+  /* Det som blir överflödigt att bilderna göms medan den andra visas. */
   overflow: hidden;
 }
 .slider {
-  position: relative;
+  /* Regler som gäller för bildspelet som det ska kunna bläddra mellan två bilder. */
+  position: relative; /* Använder mig av relativ positionering eftersom den kan flyttas runt om det så behövs. Det tar hela tiden upp samma utrymme som 
+  det skulle gjort innan förflyttningen. Tillskillnad från om ett objekt skulle vara fixerad, vilket hade både kunnat störa användarupplevelsen och platsen den faktiskt tar.*/
   width: 200%;
   margin: 0;
   left: 0;
@@ -73,6 +93,7 @@
   flex-shrink: 0;
 }
 .slide img {
+  /* Ser till så att alla bilder i bildspelet är 100% stora till skärmen som den visas på.  */
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -80,38 +101,47 @@
 }
 /* Produktalternativ */
 .products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  display: grid; /* Här väljs Grid framför en flexbox eftersom nu vill vi kunna sätta upp både kolumner och rader, detta går endast att skapa med Grid. */
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Utseendet på hemsidan i största format ska vara 4 st i bredd och varje ska vara 1 kolumn hög */
+  gap: 2rem; /* Mellanrummet mellan produkterna.*/
   margin-top: 4rem;
 }
 .item {
+  /* Sätter samma regler för fler än en, väljer då att kalla på klassen och tilldela alla items samma uppsättning. */
   position: relative;
   text-align: left;
   padding: 20px;
-  background-color: cadetblue;
+  background-color: cadetblue; /* Väljer en ljusblå bakgrund då kontrasten på hemsidan blir bra.*/
 }
 .item h2 {
+  /* Sätter regler för alla rubriker för varje produkt. */
   margin: 0;
   margin-top: 10px;
 }
 .item p {
+  /* Sätter regler för alla stycken för varje produkt.  */
   font-size: 22px;
   color: rgb(61, 193, 51);
   margin: 0;
 }
 .item .price-container {
-  display: flex;
-  justify-content: space-between;
+  display: flex; /* Använder flex här igen eftersom det endast är en rad som skall ändras, "onödigt" med alla funktioner som grid ger när vi ändå bara
+  använder styling gör 1 rad*/
+  justify-content: space-between; /*  Fixar bra mellanrum*/
   margin-top: 10px;
   align-items: center;
 }
 .item .price-container img {
+  /* En symbol som täcker för länken, som senare skall leda till en kundkorg.*/
   width: 50px;
   height: auto;
   object-fit: cover;
 }
 .item .image-wrapper img {
+  /* Alla bilder för produkterna får samma egenskaper. */
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -121,14 +151,17 @@
   position: relative;
 }
 .item .hover-images {
+  /* Den anpassar sig efter sin föräldrer, vilket är nödvändigt om bilderna ska vara likastora*/
   position: absolute;
   top: 0;
 }
 .item .hover-images:hover {
+  /* Hur mycket av bilden som ligger framför ska vara kvar. Väljer 0 eftersom man endast vill se en av bilderna i taget.  */
   opacity: 0;
   cursor: pointer;
 }
 @keyframes slider {
+  /* Hur bildspelet skall bläddras i, alltså hur många procent av bilden ska visas beroende på hur processen räknar. */
   0% {
     transform: translateX(0);
   }
@@ -142,6 +175,7 @@
 
 /*Footer */
 footer {
+  /* Väljer även här att använda grid före flexbox eftersom vi ska hantera både kolumner och rader. */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 2rem;
@@ -149,16 +183,17 @@ footer {
 }
 
 .secondary-nav li {
+  /* Inställningar för den andra navigationen. Denna behöver också bara vara en flexbox eftersom vi endast hanterar en kolumn och inget mer. */
   display: flex;
   margin-top: 0.5rem;
 }
 
-body,
+body, /* Väljer att använda ett visst typsnitt på bara brödtexten. */
 input {
   font-family: Regular-selawik, serif;
 }
 
-h1,
+h1, /* En annan för rubriker, denna är av samma stuk men fetstilt.*/
 h2,
 h3 {
   font-family: Selawik-semibold, serif;
@@ -166,6 +201,7 @@ h3 {
 
 /* Responsiva brytpunkter */
 @media (max-width: 1320px) {
+  /* Hemsidan som lämpar sig bättre till större skärmar som en dator.*/
   .wrapper {
     width: 100%;
     padding: 0 10px;
@@ -173,6 +209,7 @@ h3 {
 }
 
 @media (max-width: 920px) {
+  /* Elementen görs så breda dem kan till mängden width den har. */
   main {
     width: 100%;
   }
@@ -189,6 +226,7 @@ h3 {
 }
 
 @media (max-width: 750px) {
+  /* Anpassning för mindre skärmar, skulle ex. kunna vara en tablet. */
   main {
     width: 100%;
   }
@@ -204,6 +242,7 @@ h3 {
 }
 
 @media (max-width: 500px) {
+  /* Anpassningar för mobilanvändning.*/
   .main-nav {
     width: 100%;
   }
